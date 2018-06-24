@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>4Solid Dev Team</Authors>
+    <Company>4Solid</Company>
+    <Copyright>4Solid S.r.L.</Copyright>
+    <PackageTags>DDD, CQRS, 4Solid</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.2.2" />
+    <PackageReference Include="EventStore.ClientAPI.NetCore" Version="4.1.0.23" />
+    <PackageReference Include="Paramore.Brighter.MessagingGateway.RMQ" Version="7.4.2" />
+  </ItemGroup>
+
+</Project>

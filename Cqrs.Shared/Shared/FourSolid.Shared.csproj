@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>4Solid Dev Team</Authors>
+    <Company>4Solid4Solid Dev Team</Company>
+    <Copyright>4Solid S.r.L.</Copyright>
+    <PackageTags>4Solid, Shared</PackageTags>
+    <Description>Shared package for 4Solid Solutions</Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Paramore.Brighter" Version="7.4.2" />
+  </ItemGroup>
+
+</Project>
