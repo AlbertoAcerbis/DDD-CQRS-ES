@@ -1,0 +1,261 @@
+<div class="row">
+    <div class="col-lg-12 mb-4">
+        <div widget class="card border-0 box-shadow">
+            <div class="card-header transparent border-0 text-muted">
+                <h5 class="mb-0">Setup Utenti Esterni</h5>     
+            </div>
+            <div class="card-body pt-0 widget-body">  
+                <h6 class="card-title text-center"></h6>
+                <form class="form-horizontal">
+                    <div class="form-group row text-sm-left">
+                          <label for="codiceUtente" class="col-sm-2 form-control-label mt-1">Codice Utente: </label>
+                          <div class="col-sm-10">
+                              <input type="text" class="form-control" id="codiceUtente">
+                          </div>
+                    </div>
+                    <div class="form-group row text-sm-left">
+                        <label for="azienda" class="col-sm-2 form-control-label mt-1">Azienda<p style="display:inline; color:red;"> *</p> </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="azienza">
+                        </div>
+                    </div>
+                    <div class="form-group row text-sm-left">
+                        <label for="codiceSap" class="col-sm-2 form-control-label mt-1">Codice SAP: </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="codiceSap">
+                        </div>
+                    </div>
+                    <div class="form-group row text-sm-left">
+                        <label for="tipologiaContratto" class="col-sm-2 form-control-label mt-0">Tipologia Contratto<p style="display:inline; color:red;"> *</p>: </label>
+                        <div class="col-sm-10">                      
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" name="radioContratto" class="custom-control-input radio-primary" id="contratto-quadro" checked>
+                                    <label class="custom-control-label" for="contratto-quadro">Quadro</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" name="radioContratto" class="custom-control-input radio-primary" id="contratto-sub-occasionale">
+                                    <label class="custom-control-label" for="contratto-sub-occasionale">Subappalto Occasionale</label>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="form-group row text-sm-left">
+                        <label for="numeroContratto" class="col-sm-2 form-control-label mt-1">Numero Contratto<p style="display:inline; color:red;"> *</p>: </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="numeroContratto">
+                        </div>
+                    </div>
+                    <div class="form-group row text-sm-left">
+                        <label for="dataContratto" class="col-sm-2 form-control-label mt-1">Data Contratto: </label>
+                        <div class="input-group col-sm-4">
+                            <input class="form-control" placeholder="" name="dp" [(ngModel)]="modelPopup" ngbDatepicker #p="ngbDatepicker">
+                            <div class="input-group-append" (click)="p.toggle()">
+                              <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row text-sm-left">
+                        <label for="codiceSapSc" class="col-sm-2 form-control-label mt-1">Codice SAP SC: </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="codiceSapSc">
+                        </div>
+                    </div>
+                    <div class="form-group row text-sm-left">
+                        <label for="aziendaUnipersonale" class="col-sm-2 form-control-label mt-3">Azienda Unipersonale: </label>
+                      <div class="col-sm-10">
+                      <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input checkbox-primary" id="azienzaUnipersonale">
+                          <label class="custom-control-label" for="azienzaUnipersonale"></label>
+                      </div>
+                      </div>
+                    </div>
+                    <div class="form-group row text-sm-left">
+                        <label for="numeroDipendenti" class="col-sm-2 form-control-label mt-1">Numero Dipendenti<p style="display:inline; color:red;"> *</p>: </label>
+                        <div class="col-sm-4">
+                            <input type="text" value="1" class="form-control" id="numeroDipendenti">
+                        </div>
+                    </div>
+                    <div class="form-group row text-sm-left">
+                        <label for="indirizzoAzienda" class="col-sm-2 form-control-label mt-1">Indirizzo Azienda: </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="indirizzoAzienda">
+                        </div>
+                    </div>
+                    <div class="form-group row text-sm-left">
+                        <label for="localita" class="col-sm-2 form-control-label mt-1">Località: </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="localita">
+                        </div>
+                    </div>
+                    <div class="form-group row text-sm-left">
+                        <label for="indirizzoEmail" class="col-sm-2 form-control-label mt-1">Indirizzo Email: </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="indirizzoEmail">
+                        </div>
+                    </div>
+                    <div class="form-group row text-sm-left">
+                        <label for="cassaEdile" class="col-sm-2 form-control-label mt-0">Cassa Edile<p style="display:inline; color:red;"> *</p>: </label>
+                        <div class="col-sm-10">                      
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" name="radioCassaEdile" class="custom-control-input radio-primary" id="cassaEdile-si">
+                                    <label class="custom-control-label" for="cassaEdile-si">Si</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" name="radioCassaEdile" class="custom-control-input radio-primary" id="cassaEdile-no" checked>
+                                    <label class="custom-control-label" for="cassaEdile-no">No</label>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="form-group row text-sm-left">
+                        <label for="cittaCassaEdile" class="col-sm-2 form-control-label mt-1">Cassa Edile di: </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="cittaCassaEdile">
+                        </div>
+                    </div>
+                    <div class="form-group row text-sm-left">
+                        <label for="cittaCameraCommercio" class="col-sm-2 form-control-label mt-1">Camera di Commercio di: </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="cittaCameraCommercio">
+                        </div>
+                    </div>
+                    <div class="form-group row text-sm-left">
+                        <label for="numeroCameraCommercio" class="col-sm-2 form-control-label mt-1">Numero Camera di Commercio: </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="numeroCameraCommercio">
+                        </div>
+                    </div>
+                    <div class="form-group row text-sm-left">
+                        <label for="niCommodity" class="col-sm-2 form-control-label mt-1">NI Commodity: </label>
+                        <div class="input-group col-sm-4">
+                            <input class="form-control" placeholder="" name="dpNiCommodity" [(ngModel)]="niComModel" ngbDatepicker #pNiCom="ngbDatepicker">
+                            <div class="input-group-append" (click)="pNiCom.toggle()">
+                              <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                            </div>
+                            <div class="input-group-append">
+                              <small class="text-primary">Data di qualifica se il fornitore è qualificato per NI Commodity</small> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row text-sm-left">
+                        <label for="niCustom" class="col-sm-2 form-control-label mt-1">NI Custom: </label>
+                        <div class="input-group col-sm-4">
+                            <input class="form-control" placeholder="" name="dpNiCustom" [(ngModel)]="niCustomModel" ngbDatepicker #pNiCustom="ngbDatepicker">
+                            <div class="input-group-append" (click)="pNiCustom.toggle()">
+                              <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                            </div>
+                            <div class="input-group-append">
+                              <small class="text-primary">Data di qualifica se il fornitore è qualificato per NI Custom</small> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row text-sm-left">
+                        <label for="modRCommodity" class="col-sm-2 form-control-label mt-1">MOD-R Commodity: </label>
+                        <div class="input-group col-sm-4">
+                            <input class="form-control" placeholder="" name="dpModRCommodity" [(ngModel)]="niModRCom" ngbDatepicker #pModRCom="ngbDatepicker">
+                            <div class="input-group-append" (click)="pModRCom.toggle()">
+                              <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row text-sm-left">
+                        <label for="modRCustom" class="col-sm-2 form-control-label mt-1">MOD-R Custom: </label>
+                        <div class="input-group col-sm-4">
+                            <input class="form-control" placeholder="" name="dpModRCustom" [(ngModel)]="niModRCustomModel" ngbDatepicker #pModRCustom="ngbDatepicker">
+                            <div class="input-group-append" (click)="pModRCustom.toggle()">
+                              <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                            </div>
+                            <div class="input-group-append">
+                              <small class="text-primary">Data di qualifica se il fornitore è qualificato per MOD-R Custom</small> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row text-sm-left">
+                        <label for="riparazioni" class="col-sm-2 form-control-label mt-1">Riparazioni: </label>
+                        <div class="input-group col-sm-4">
+                            <input class="form-control" placeholder="" name="dpRiparazioni" [(ngModel)]="riparazioniModel" ngbDatepicker #pRiparazioni="ngbDatepicker">
+                            <div class="input-group-append" (click)="pRiparazioni.toggle()">
+                              <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                            </div>
+                            <div>
+                              <small class="text-primary">Data di qualifica se il fornitore è qualificato per Riparazioni</small> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row text-sm-left">
+                        <label for="modT" class="col-sm-2 form-control-label mt-1">MOD-T: </label>
+                        <div class="input-group col-sm-4">
+                            <input class="form-control" placeholder="" name="dpModT" [(ngModel)]="modTModel" ngbDatepicker #pModT="ngbDatepicker">
+                            <div class="input-group-append" (click)="pModT.toggle()">
+                              <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                            </div>
+                            <div>
+                              <small class="text-primary">Data di qualifica se il fornitore è qualificato per MOD-T</small> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row text-sm-left">
+                        <label for="area" class="col-sm-2 form-control-label mt-0">Area: </label>
+                        <div class="col-sm-10">                      
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" name="radioArea" class="custom-control-input radio-primary" id="areaTerzisti">
+                                    <label class="custom-control-label" for="areaTerzisti">Terzisti</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" name="radioArea" class="custom-control-input radio-primary" id="areaPm">
+                                    <label class="custom-control-label" for="areaPm">Pm</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" name="radioArea" class="custom-control-input radio-primary" id="areaNpms">
+                                    <label class="custom-control-label" for="areaNpms">Npms</label>
+                                </div>
+                                <div class="input-group-append"> 
+                                  <small class="text-primary">Area di appartenenza</small> 
+                                </div>
+                        </div>
+                    </div>
+                    <div class="form-group row text-sm-left">
+                        <label for="dataAttivazione" class="col-sm-2 form-control-label mt-1">Data attivazione: </label>
+                        <div class="input-group col-sm-4">
+                            <input class="form-control" placeholder="" name="dp-dataAttivazione" [(ngModel)]="dataAttivazioneModel" ngbDatepicker #pDataAttivazione="ngbDatepicker">
+                            <div class="input-group-append" (click)="pDataAttivazione.toggle()">
+                              <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row text-sm-left">
+                        <label for="emailAutomatiche" class="col-sm-2 form-control-label mt-3">Email automatiche: </label>
+                      <div class="col-sm-10">
+                      <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input checkbox-primary" id="emailAutomatiche" checked>
+                          <label class="custom-control-label" for="emailAutomatiche"></label>
+                      </div>
+                      </div>
+                    </div>
+                    <div class="form-group row text-sm-left">
+                        <label for="terzistaPagante" class="col-sm-2 form-control-label mt-3">Terzista pagante: </label>
+                      <div class="col-sm-10">
+                      <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input checkbox-primary" id="terzistaPagante">
+                          <label class="custom-control-label" for="terzistaPagante"></label>
+                      </div>
+                      </div>
+                    </div>
+                    <div class="form-group row text-sm-left">
+                        <label for="disabilitato" class="col-sm-2 form-control-label mt-3">Disabilitato: </label>
+                      <div class="col-sm-10">
+                      <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input checkbox-primary" id="disabilitato">
+                          <label class="custom-control-label" for="disabilitato"></label>
+                      </div>
+                      </div>
+                    </div>
+                    <small class="text">I campi contrassegnati con (<p style="display:inline; color:red;">*</p>) sono obbligatori.</small> 
+                    <div class="form-group" style="text-align:center;">
+                      <button type="button" class="btn btn-outline-primary w-100p mb-1">Salva</button>
+                      &nbsp;&nbsp;
+                      <button type="button" class="btn btn-outline-gray w-100p mb-1">Annulla</button>
+                    </div>    
+                </form>
+            </div>
+        </div>
+    </div>
+  </div>

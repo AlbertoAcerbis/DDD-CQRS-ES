@@ -1,0 +1,73 @@
+<div class="row">
+  <div class="col-lg-12 mb-4">
+      <div widget class="card border-0 box-shadow">
+          <div class="card-header transparent border-0 text-muted">
+              <h5 class="mb-0">Creazione di un nuovo utente</h5>     
+          </div>
+          <div class="card-body pt-0 widget-body"> 
+              <h6 class="card-title text-center"></h6>
+              <form class="form-horizontal" [formGroup]="userCreateForm" (ngSubmit)="createUser(userCreateForm.value)">
+                  <div class="form-group row text-sm-left" [ngClass]="{'has-danger' : userCreateForm.get('username').touched && userCreateForm.get('username').hasError('required'), 'has-success' : !userCreateForm.get('username').hasError('required') }">
+                        <label for="username" class="col-sm-2 form-control-label mt-1">Username<p style="display:inline; color:red;"> *</p>: </label>
+                        <div class="col-sm-10">
+                            <input type="text" formControlName="username" class="form-control" [ngClass]="{'form-control-danger' :  userCreateForm.get('username').hasError('required'), 'form-control-success' :  !userCreateForm.get('username').hasError('required') }" id="username">
+                            <small class="text-danger" *ngIf="userCreateForm.get('username').touched && userCreateForm.get('username').hasError('required')">Lo username è obbligatorio</small>
+                        </div>
+                  </div>
+                  <div class="form-group row text-sm-left" [ngClass]="{'has-danger' : userCreateForm.get('fullname').touched && userCreateForm.get('fullname').hasError('required'), 'has-success' : !userCreateForm.get('fullname').hasError('required') }">
+                      <label for="fullname" class="col-sm-2 form-control-label mt-1">Nome completo<p style="display:inline; color:red;"> *</p>: </label>
+                      <div class="col-sm-10">
+                          <input type="text" formControlName="fullname" class="form-control" [ngClass]="{'form-control-danger' :  userCreateForm.get('fullname').hasError('required'), 'form-control-success' :  !userCreateForm.get('fullname').hasError('required') }" id="fullname">
+                          <small class="text-danger" *ngIf="userCreateForm.get('fullname').touched && userCreateForm.get('fullname').hasError('required')">Il nome completo è obbligatorio</small>
+                      </div>
+                 </div>
+                 <div class="form-group row text-sm-left" [ngClass]="{'has-danger' : (userCreateForm.get('password').touched && userCreateForm.get('password').hasError('required')) || (userCreateForm.get('password').touched && userCreateForm.get('password').hasError('minlength')), 
+                                                                      'has-success' : !userCreateForm.get('password').hasError('required') && !userCreateForm.get('password').hasError('minlength')}">
+                    <label for="password" class="col-sm-2 form-control-label mt-1">Password<p style="display:inline; color:red;"> *</p>: </label>
+                    <div class="col-sm-10">
+                        <input type="password" formControlName="password" class="form-control" [ngClass]="{'form-control-danger' : (userCreateForm.get('password').touched && userCreateForm.get('password').hasError('required')) || (userCreateForm.get('password').touched && userCreateForm.get('password').hasError('minlength')), 
+                                                                                                           'form-control-success' : !userCreateForm.get('password').hasError('required') && !userCreateForm.get('password').hasError('minlength')}" id="password">
+                        <small class="text-danger" *ngIf="userCreateForm.get('password').touched && userCreateForm.get('password').hasError('required')">La password è obbligatoria</small>                              
+                        <small class="text-danger" *ngIf="userCreateForm.get('password').touched && userCreateForm.get('password').hasError('minlength')">La password non è abbastanza lunga, deve contenere minimo 6 caratteri</small>
+                    </div>
+                 </div>
+                 <div class="form-group row text-sm-left" [ngClass]="{'has-danger' : (userCreateForm.get('confirmPassword').touched && userCreateForm.get('confirmPassword').hasError('required')) || (userCreateForm.get('confirmPassword').touched && userCreateForm.get('confirmPassword').hasError('equalTo')), 
+                                                                      'has-success' : !userCreateForm.get('confirmPassword').hasError('required') && !userCreateForm.get('confirmPassword').hasError('equalTo')}">
+                    <label for="confirmPassword" class="col-sm-2 form-control-label mt-1">Conferma Password<p style="display:inline; color:red;"> *</p>: </label>
+                    <div class="col-sm-10">
+                        <input type="text" formControlName="confirmPassword" class="form-control" [ngClass]="{'form-control-danger' : (userCreateForm.get('confirmPassword').touched && userCreateForm.get('confirmPassword').hasError('required')) || (userCreateForm.get('confirmPassword').touched && userCreateForm.get('confirmPassword').hasError('equalTo')), 
+                                                                                                              'form-control-success' : !userCreateForm.get('confirmPassword').hasError('required') && !userCreateForm.get('confirmPassword').hasError('equalTo')}" type="password" id="confirmPassword">
+                        <small class="text-danger" *ngIf="userCreateForm.get('confirmPassword').touched && userCreateForm.get('confirmPassword').hasError('required')">La password di conferma è obbligatoria</small>                              
+                        <small class="text-danger" *ngIf="userCreateForm.get('confirmPassword').touched && userCreateForm.get('confirmPassword').hasError('equalTo')">La password inserita e la password di conferma non corrispondono</small>
+                    </div>
+                 </div>
+                 <div class="form-group row text-sm-left" [ngClass]="{'has-danger' : (userCreateForm.get('email').touched && userCreateForm.get('email').hasError('required')) || (userCreateForm.get('confirmPassword').touched && userCreateForm.get('email').hasError('email')), 
+                                                                      'has-success' : !userCreateForm.get('email').hasError('required') && !userCreateForm.get('email').hasError('email')}">
+                        <label for="email" class="col-sm-2 form-control-label mt-1">Indirizzo email<p style="display:inline; color:red;"> *</p>: </label>
+                        <div class="col-sm-10">
+                            <input type="text" formControlName="email" class="form-control" [ngClass]="{'form-control-danger' : (userCreateForm.get('email').touched && userCreateForm.get('email').hasError('required')) || (userCreateForm.get('email').touched && userCreateForm.get('email').hasError('email')), 
+                                                                                                        'form-control-success' :  !userCreateForm.get('email').hasError('required') && !userCreateForm.get('email').hasError('email')}" type="text" id="email">
+                            <small class="text-danger" *ngIf="userCreateForm.get('email').touched && userCreateForm.get('email').hasError('required')">L'indirizzo email è obbligatorio</small>                              
+                            <small class="text-danger" *ngIf="userCreateForm.get('email').touched && userCreateForm.get('email').hasError('email')">L'indirizzo email non è valido</small>
+                        </div>
+                  </div>
+                  <div class="form-group row text-sm-left">
+                    <label for="type" class="col-sm-2 form-control-label mt-1">Tipologia utente<p style="display:inline; color:red;"> *</p>:</label>
+                    <div class="col-sm-10">
+                      <select class="form-control" #t (change)="getTypeValue(t.value)" id="type">
+                          <option value="terzista">Nuovo Utente Terzista</option>
+                          <option value="interno">Nuovo Utente Interno</option>
+                      </select>
+                    </div>
+                </div>
+                <small class="text">I campi contrassegnati con (<p style="display:inline; color:red;">*</p>) sono obbligatori.</small> 
+                <div class="form-group" style="text-align:center;">
+                  <button type="button" class="btn btn-outline-primary w-100p mb-1" type="submit">Salva</button>
+                  &nbsp;&nbsp;
+                  <button type="button" class="btn btn-outline-gray w-100p mb-1" (click)="goBack()">Annulla</button>
+                </div>    
+              </form>
+          </div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<h5 class="mb-4">
+  RunTime updates - 
+    <i class="fa fa-external-link" style="font-size:24px;color:green" *ngIf="!signalrErrorStatus"></i>
+    <i class="fa fa-external-link" style="font-size:24px;color:red" *ngIf="signalrErrorStatus"></i>
+</h5>
+
+<!-- Loading pane -->
+<div *ngIf="loading" class="text-center">
+  <img src="../../../../assets/img/logo/loading.gif" />
+</div>
+
+<div *ngIf="!loading">
+  <button (click)="addArticolo()" class="fa fa-plus"></button>
+  <!-- https://www.w3schools.com/bootstrap4/bootstrap_tables.asp -->
+  <div class="table-responsive" *ngIf="articoli && articoli.length > 0">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">
+            #
+          </th>
+          <th scope="col">
+            Codice
+          </th>
+          <th scope="col">
+            Descrizione
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let articolo of articoli; let i = index">
+          <th scope="row">{{i}}</th>
+          <td>
+            {{articolo.articoloId}}
+          </td>
+          <td>
+            {{articolo.articoloDescrizione}}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="!articoli || articoli.length == 0">
+    Nessun Articolo presente.
+  </div>
+</div>
