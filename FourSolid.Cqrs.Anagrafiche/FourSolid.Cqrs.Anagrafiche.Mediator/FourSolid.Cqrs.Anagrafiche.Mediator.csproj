@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.2.2" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="2.1.0" />
+    <PackageReference Include="Paramore.Brighter" Version="7.4.2" />
+    <PackageReference Include="Paramore.Brighter.MessagingGateway.RMQ" Version="7.4.2" />
+    <PackageReference Include="Paramore.Brighter.ServiceActivator" Version="7.4.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\FourSolid.Cqrs.Shared\CommonDomain\Muflone.CommonDomain.csproj" />
+    <ProjectReference Include="..\..\FourSolid.Cqrs.Shared\EventStore\FourSolid.EventStore.csproj" />
+    <ProjectReference Include="..\..\FourSolid.Cqrs.Shared\InProcessBus\FourSolid.Common.InProcessBus.csproj" />
+    <ProjectReference Include="..\..\FourSolid.Cqrs.Shared\Shared\FourSolid.Shared.csproj" />
+    <ProjectReference Include="..\FourSolid.Cqrs.Anagrafiche.ApplicationServices\FourSolid.Cqrs.Anagrafiche.ApplicationServices.csproj" />
+    <ProjectReference Include="..\FourSolid.Cqrs.Anagrafiche.Domain\FourSolid.Cqrs.Anagrafiche.Domain.csproj" />
+    <ProjectReference Include="..\FourSolid.Cqrs.Anagrafiche.Messages.Commands\FourSolid.Cqrs.Anagrafiche.Messages.Commands.csproj" />
+    <ProjectReference Include="..\FourSolid.Cqrs.Anagrafiche.Shared\FourSolid.Cqrs.Anagrafiche.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="FourSolid.MessagingGateway.RabbitMq">
+      <HintPath>..\..\..\..\Users\Alberto\.nuget\packages\foursolid.messaginggateway.rabbitmq\1.0.0\lib\netstandard2.0\FourSolid.MessagingGateway.RabbitMq.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.2.2" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="2.1.0" />
+    <PackageReference Include="Paramore.Brighter.ServiceActivator" Version="7.4.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\FourSolid.Cqrs.Shared\EventStore\FourSolid.EventStore.csproj" />
+    <ProjectReference Include="..\FourSolid.Cqrs.OrdiniClienti.ApplicationServices\FourSolid.Cqrs.OrdiniClienti.ApplicationServices.csproj" />
+    <ProjectReference Include="..\FourSolid.Cqrs.OrdiniClienti.Domain\FourSolid.Cqrs.OrdiniClienti.Domain.csproj" />
+    <ProjectReference Include="..\FourSolid.Cqrs.OrdiniClienti.Messages.Commands\FourSolid.Cqrs.OrdiniClienti.Messages.Commands.csproj" />
+    <ProjectReference Include="..\FourSolid.Cqrs.OrdiniClienti.Shared\FourSolid.Cqrs.OrdiniClienti.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

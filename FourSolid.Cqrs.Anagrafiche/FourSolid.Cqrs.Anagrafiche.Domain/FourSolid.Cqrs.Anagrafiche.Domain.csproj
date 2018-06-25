@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Paramore.Brighter" Version="7.4.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\FourSolid.Cqrs.Shared\CommonDomain\Muflone.CommonDomain.csproj" />
+    <ProjectReference Include="..\FourSolid.Cqrs.Anagrafiche.Domain.Rules\FourSolid.Cqrs.Anagrafiche.Domain.Rules.csproj" />
+    <ProjectReference Include="..\FourSolid.Cqrs.Anagrafiche.Messages.Commands\FourSolid.Cqrs.Anagrafiche.Messages.Commands.csproj" />
+    <ProjectReference Include="..\FourSolid.Cqrs.Anagrafiche.Messages.Events\FourSolid.Cqrs.Anagrafiche.Messages.Events.csproj" />
+  </ItemGroup>
+
+</Project>

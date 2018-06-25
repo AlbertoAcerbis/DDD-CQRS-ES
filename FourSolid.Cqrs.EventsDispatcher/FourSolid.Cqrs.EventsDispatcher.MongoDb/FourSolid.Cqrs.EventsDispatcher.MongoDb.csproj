@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Driver" Version="2.6.1" />
+    <PackageReference Include="MongoDB.Driver.Core" Version="2.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\FourSolid.Cqrs.Shared\Shared\FourSolid.Shared.csproj" />
+    <ProjectReference Include="..\FourSolid.Cqrs.EventsDispatcher.Configuration\FourSolid.Cqrs.EventsDispatcher.Configuration.csproj" />
+  </ItemGroup>
+
+</Project>

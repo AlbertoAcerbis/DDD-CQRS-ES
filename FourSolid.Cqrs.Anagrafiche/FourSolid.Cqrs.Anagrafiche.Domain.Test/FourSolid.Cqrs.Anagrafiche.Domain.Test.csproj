@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.2.2" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.7.2" />
+    <PackageReference Include="Paramore.Brighter" Version="7.4.2" />
+    <PackageReference Include="xunit" Version="2.3.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
+    <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\FourSolid.Cqrs.Shared\CommonDomain\Muflone.CommonDomain.csproj" />
+    <ProjectReference Include="..\..\FourSolid.Cqrs.Shared\EventStore\FourSolid.EventStore.csproj" />
+    <ProjectReference Include="..\FourSolid.Cqrs.Anagrafiche.Domain\FourSolid.Cqrs.Anagrafiche.Domain.csproj" />
+    <ProjectReference Include="..\FourSolid.Cqrs.Anagrafiche.Messages.Commands\FourSolid.Cqrs.Anagrafiche.Messages.Commands.csproj" />
+    <ProjectReference Include="..\FourSolid.Cqrs.Anagrafiche.Messages.Events\FourSolid.Cqrs.Anagrafiche.Messages.Events.csproj" />
+  </ItemGroup>
+
+</Project>

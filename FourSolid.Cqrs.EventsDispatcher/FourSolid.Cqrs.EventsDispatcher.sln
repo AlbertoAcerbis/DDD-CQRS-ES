@@ -1,0 +1,100 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20 Infrastructures", "20 Infrastructures", "{C764F746-BB83-4EFA-8F19-F9B83FCE29D0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CommonDomain", "CommonDomain", "{29EA6BC7-68E5-4FDE-A621-DA86CBF1AB68}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "99 Presentation", "99 Presentation", "{A3A42625-81BF-40DB-8B70-D9E51D32024D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FourSolid.Cqrs.EventsDispatcher", "FourSolid.Cqrs.EventsDispatcher\FourSolid.Cqrs.EventsDispatcher.csproj", "{0884B34E-47CE-48FF-BCBE-BABF2588A0C9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EventStore", "EventStore", "{D4427D0D-C7E7-4E26-83B3-415242C6AEF4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "30 Common", "30 Common", "{9879F763-EAD2-4AA5-AA6A-3109DF4DAC6D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FourSolid.Shared", "..\FourSolid.Cqrs.Shared\Shared\FourSolid.Shared.csproj", "{1333DE94-ECB9-4FA4-9F83-9DEF611EE06F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logging", "Logging", "{49E9DB3E-2DF7-4F87-A433-7B5F7C70E040}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FourSolid.Cqrs.EventsDispatcher.Logging", "FourSolid.Cqrs.EventsDispatcher.Logging\FourSolid.Cqrs.EventsDispatcher.Logging.csproj", "{E67900CC-CB11-436A-8E9C-79B8824C31D1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RbbitMq", "RbbitMq", "{92A72BEC-E5BF-42AD-91B6-F08FF7F0D036}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FourSolid.MessagingGateway.RabbitMq", "..\FourSolid.Cqrs.Shared\RabbitMq\FourSolid.MessagingGateway.RabbitMq.csproj", "{192941BD-BB5D-48CB-BD76-868D2E3CC084}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configuration", "{68DDDDC9-4AAD-4F0D-9100-5368A7C9C5B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FourSolid.Cqrs.EventsDispatcher.Configuration", "FourSolid.Cqrs.EventsDispatcher.Configuration\FourSolid.Cqrs.EventsDispatcher.Configuration.csproj", "{2C3F32ED-19DC-4149-AB9D-6A006079E6F3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "50 ReadModel", "50 ReadModel", "{DD52C4FD-ED8D-4AB3-8434-D0C6FAA775CF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FourSolid.Cqrs.EventsDispatcher.MongoDb", "FourSolid.Cqrs.EventsDispatcher.MongoDb\FourSolid.Cqrs.EventsDispatcher.MongoDb.csproj", "{6ABC624F-9066-4196-B63B-58A383069057}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FourSolid.Cqrs.EventsDispatcher.EventStore", "FourSolid.Cqrs.EventsDispatcher.EventStore\FourSolid.Cqrs.EventsDispatcher.EventStore.csproj", "{3813CC4E-EC45-4B21-B3D9-4C3410FAB662}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Muflone.CommonDomain", "..\FourSolid.Cqrs.Shared\CommonDomain\Muflone.CommonDomain.csproj", "{270F5136-9A00-440D-9E18-88CE51F84E85}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0884B34E-47CE-48FF-BCBE-BABF2588A0C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0884B34E-47CE-48FF-BCBE-BABF2588A0C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0884B34E-47CE-48FF-BCBE-BABF2588A0C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0884B34E-47CE-48FF-BCBE-BABF2588A0C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1333DE94-ECB9-4FA4-9F83-9DEF611EE06F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1333DE94-ECB9-4FA4-9F83-9DEF611EE06F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1333DE94-ECB9-4FA4-9F83-9DEF611EE06F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1333DE94-ECB9-4FA4-9F83-9DEF611EE06F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E67900CC-CB11-436A-8E9C-79B8824C31D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E67900CC-CB11-436A-8E9C-79B8824C31D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E67900CC-CB11-436A-8E9C-79B8824C31D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E67900CC-CB11-436A-8E9C-79B8824C31D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{192941BD-BB5D-48CB-BD76-868D2E3CC084}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{192941BD-BB5D-48CB-BD76-868D2E3CC084}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{192941BD-BB5D-48CB-BD76-868D2E3CC084}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{192941BD-BB5D-48CB-BD76-868D2E3CC084}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C3F32ED-19DC-4149-AB9D-6A006079E6F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C3F32ED-19DC-4149-AB9D-6A006079E6F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C3F32ED-19DC-4149-AB9D-6A006079E6F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C3F32ED-19DC-4149-AB9D-6A006079E6F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6ABC624F-9066-4196-B63B-58A383069057}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6ABC624F-9066-4196-B63B-58A383069057}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6ABC624F-9066-4196-B63B-58A383069057}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6ABC624F-9066-4196-B63B-58A383069057}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3813CC4E-EC45-4B21-B3D9-4C3410FAB662}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3813CC4E-EC45-4B21-B3D9-4C3410FAB662}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3813CC4E-EC45-4B21-B3D9-4C3410FAB662}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3813CC4E-EC45-4B21-B3D9-4C3410FAB662}.Release|Any CPU.Build.0 = Release|Any CPU
+		{270F5136-9A00-440D-9E18-88CE51F84E85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{270F5136-9A00-440D-9E18-88CE51F84E85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{270F5136-9A00-440D-9E18-88CE51F84E85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{270F5136-9A00-440D-9E18-88CE51F84E85}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{29EA6BC7-68E5-4FDE-A621-DA86CBF1AB68} = {C764F746-BB83-4EFA-8F19-F9B83FCE29D0}
+		{0884B34E-47CE-48FF-BCBE-BABF2588A0C9} = {A3A42625-81BF-40DB-8B70-D9E51D32024D}
+		{D4427D0D-C7E7-4E26-83B3-415242C6AEF4} = {C764F746-BB83-4EFA-8F19-F9B83FCE29D0}
+		{1333DE94-ECB9-4FA4-9F83-9DEF611EE06F} = {9879F763-EAD2-4AA5-AA6A-3109DF4DAC6D}
+		{49E9DB3E-2DF7-4F87-A433-7B5F7C70E040} = {C764F746-BB83-4EFA-8F19-F9B83FCE29D0}
+		{E67900CC-CB11-436A-8E9C-79B8824C31D1} = {49E9DB3E-2DF7-4F87-A433-7B5F7C70E040}
+		{92A72BEC-E5BF-42AD-91B6-F08FF7F0D036} = {C764F746-BB83-4EFA-8F19-F9B83FCE29D0}
+		{192941BD-BB5D-48CB-BD76-868D2E3CC084} = {92A72BEC-E5BF-42AD-91B6-F08FF7F0D036}
+		{68DDDDC9-4AAD-4F0D-9100-5368A7C9C5B6} = {C764F746-BB83-4EFA-8F19-F9B83FCE29D0}
+		{2C3F32ED-19DC-4149-AB9D-6A006079E6F3} = {68DDDDC9-4AAD-4F0D-9100-5368A7C9C5B6}
+		{6ABC624F-9066-4196-B63B-58A383069057} = {DD52C4FD-ED8D-4AB3-8434-D0C6FAA775CF}
+		{3813CC4E-EC45-4B21-B3D9-4C3410FAB662} = {D4427D0D-C7E7-4E26-83B3-415242C6AEF4}
+		{270F5136-9A00-440D-9E18-88CE51F84E85} = {29EA6BC7-68E5-4FDE-A621-DA86CBF1AB68}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5D8D0B5B-7B76-439A-8DA7-C3E91EDA3A25}
+	EndGlobalSection
+EndGlobal

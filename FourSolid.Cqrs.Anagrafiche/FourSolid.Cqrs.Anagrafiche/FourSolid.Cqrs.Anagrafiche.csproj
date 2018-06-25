@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netcoreapp2.1\FourSolid.Cqrs.Anagrafiche.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.2.2" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.0.0" />
+    <PackageReference Include="Microsoft.Extensions.PlatformAbstractions" Version="1.1.0" />
+    <PackageReference Include="Serilog" Version="2.7.1" />
+    <PackageReference Include="Serilog.Extensions.Logging" Version="2.0.2" />
+    <PackageReference Include="Serilog.Extensions.Logging.File" Version="1.1.0" />
+    <PackageReference Include="Serilog.Sinks.Literate" Version="3.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="2.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\FourSolid.Cqrs.Shared\EventStore\FourSolid.EventStore.csproj" />
+    <ProjectReference Include="..\..\FourSolid.Cqrs.Shared\Shared\FourSolid.Shared.csproj" />
+    <ProjectReference Include="..\FourSolid.Cqrs.Anagrafiche.ApplicationServices\FourSolid.Cqrs.Anagrafiche.ApplicationServices.csproj" />
+    <ProjectReference Include="..\FourSolid.Cqrs.Anagrafiche.Mediator\FourSolid.Cqrs.Anagrafiche.Mediator.csproj" />
+    <ProjectReference Include="..\FourSolid.Cqrs.Anagrafiche.Shared\FourSolid.Cqrs.Anagrafiche.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

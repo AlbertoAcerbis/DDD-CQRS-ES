@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\FourSolid.Cqrs.Shared\InProcessBus\FourSolid.Common.InProcessBus.csproj" />
+    <ProjectReference Include="..\FourSolid.Cqrs.Anagrafiche.Messages.Commands\FourSolid.Cqrs.Anagrafiche.Messages.Commands.csproj" />
+    <ProjectReference Include="..\FourSolid.Cqrs.Anagrafiche.Messages.Events\FourSolid.Cqrs.Anagrafiche.Messages.Events.csproj" />
+    <ProjectReference Include="..\FourSolid.Cqrs.Anagrafiche.ReadModel.MongoDb\FourSolid.Cqrs.Anagrafiche.ReadModel.MongoDb.csproj" />
+    <ProjectReference Include="..\FourSolid.Cqrs.Anagrafiche.Shared\FourSolid.Cqrs.Anagrafiche.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

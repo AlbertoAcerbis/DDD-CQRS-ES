@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\FourSolid.Cqrs.Shared\CommonDomain\Muflone.CommonDomain.csproj" />
+    <ProjectReference Include="..\..\FourSolid.Cqrs.Shared\Shared\FourSolid.Shared.csproj" />
+    <ProjectReference Include="..\FourSolid.Cqrs.OrdiniClienti.Domain.Rules\FourSolid.Cqrs.OrdiniClienti.Domain.Rules.csproj" />
+    <ProjectReference Include="..\FourSolid.Cqrs.OrdiniClienti.Messages.Commands\FourSolid.Cqrs.OrdiniClienti.Messages.Commands.csproj" />
+    <ProjectReference Include="..\FourSolid.Cqrs.OrdiniClienti.Messages.Events\FourSolid.Cqrs.OrdiniClienti.Messages.Events.csproj" />
+  </ItemGroup>
+
+</Project>
