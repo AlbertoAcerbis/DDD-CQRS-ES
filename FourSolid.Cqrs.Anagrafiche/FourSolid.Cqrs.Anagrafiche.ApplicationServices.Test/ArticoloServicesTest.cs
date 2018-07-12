@@ -2,11 +2,13 @@
 using System.Threading.Tasks;
 using Autofac;
 using FourSolid.Cqrs.Anagrafiche.Domain.Rules.Resources;
+using FourSolid.Cqrs.Anagrafiche.Messages.Events;
 using FourSolid.Cqrs.Anagrafiche.Shared.ApplicationServices;
 using FourSolid.Cqrs.Anagrafiche.Shared.JsonModel;
 using FourSolid.Shared.InfoModel;
 using FourSolid.Shared.Services;
 using FourSolid.Shared.ValueObjects;
+using Paramore.Brighter;
 using Xunit;
 
 namespace FourSolid.Cqrs.Anagrafiche.ApplicationServices.Test
@@ -49,6 +51,24 @@ namespace FourSolid.Cqrs.Anagrafiche.ApplicationServices.Test
             var articoloOrchestrator = this._container.Resolve<IArticoloOrchestrator>();
 
             await articoloOrchestrator.GetArticoliAsync();
+        }
+
+        [Fact]
+        public void ModificaArticoloHandler()
+        {
+            var descrizioneModificataEventHandler =
+                this._container.Resolve<IHandleRequests<DescrizioneArticoloModificata>>();
+
+            var articoloId = new ArticoloId(Guid.NewGuid().ToString());
+            var descrizione = new ArticoloDescrizione("Nuova Descrizione");
+
+            var descrizioneArticoloModificata =
+                new DescrizioneArticoloModificata(articoloId, descrizione, this._who, this._when);
+
+            Exception ex = Assert.Throws<Exception>(() =>
+                descrizioneModificataEventHandler.Handle(descrizioneArticoloModificata));
+
+            Assert.Equal($"Articolo {articoloId.GetValue()} Non Trovato!", CommonServices.GetErrorMessage(ex));
         }
     }
 }

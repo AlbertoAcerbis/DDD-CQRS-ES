@@ -36,6 +36,7 @@ namespace FourSolid.Cqrs.Anagrafiche.Mediator
 
                     var subscriberRegistry = new SubscriberRegistry();
                     subscriberRegistry.RegisterAsync<CreateArticolo, CreateArticoloCommandHandler>();
+                    subscriberRegistry.RegisterAsync<ModificaDescrizioneArticolo, ModificaDescrizioneArticoloCommandHandler>();
 
                     subscriberRegistry.RegisterAsync<CreateCliente, CreateClienteCommandHandler>();
                     

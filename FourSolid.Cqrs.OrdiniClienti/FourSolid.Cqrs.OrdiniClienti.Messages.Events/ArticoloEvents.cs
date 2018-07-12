@@ -18,4 +18,19 @@ namespace FourSolid.Cqrs.OrdiniClienti.Messages.Events
             this.ArticoloDescrizione = articoloDescrizione;
         }
     }
+
+    public sealed class DescrizioneArticoloModificata : EventBase
+    {
+        public readonly ArticoloId ArticoloId;
+        public readonly ArticoloDescrizione ArticoloDescrizione;
+
+        public DescrizioneArticoloModificata(ArticoloId articoloId, ArticoloDescrizione articoloDescrizione,
+            AccountInfo who, When when) : base(who, when)
+        {
+            this.SetAggregateIdFromDomainId(articoloId);
+
+            this.ArticoloId = articoloId;
+            this.ArticoloDescrizione = articoloDescrizione;
+        }
+    }
 }

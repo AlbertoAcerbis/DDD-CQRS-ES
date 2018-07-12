@@ -1,5 +1,6 @@
 ﻿using FourSolid.Cqrs.OrdiniClienti.ReadModel.MongoDb.Abstracts;
 using FourSolid.Shared.ValueObjects;
+using MongoDB.Driver;
 
 namespace FourSolid.Cqrs.OrdiniClienti.ReadModel.MongoDb.Documents
 {
@@ -23,5 +24,10 @@ namespace FourSolid.Cqrs.OrdiniClienti.ReadModel.MongoDb.Documents
             this.ArticoloDescrizione = articoloDescrizione.GetValue();
         }
         #endregion
+
+        public UpdateDefinition<NoSqlArticolo> UpdateDescrizione(ArticoloDescrizione descrizione)
+        {
+            return Builders<NoSqlArticolo>.Update.Set(a => a.ArticoloDescrizione, descrizione.GetValue());
+        }
     }
 }

@@ -32,6 +32,14 @@ namespace FourSolid.Cqrs.Anagrafiche.ApplicationServices.Orchestrator
             await this._serviceBus.SendAsync(createArticoloCommand);
         }
 
+        public async Task ModificaDescrizioneArticoloAsync(ArticoloJson articolo, AccountInfo who, When when)
+        {
+            var modificaDescrizioneCommand = new ModificaDescrizioneArticolo(new ArticoloId(articolo.ArticoloId),
+                new ArticoloDescrizione(articolo.ArticoloDescrizione), who, when);
+
+            await this._serviceBus.SendAsync(modificaDescrizioneCommand);
+        }
+
         public async Task<IEnumerable<ArticoloJson>> GetArticoliAsync() =>
             await this._articoloFactory.GetArticoliAsync();
 

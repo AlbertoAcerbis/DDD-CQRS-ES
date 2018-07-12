@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using Autofac;
-using Muflone.CommonDomain.Persistence;
 using FourSolid.Cqrs.Anagrafiche.Domain.CommandsHandler.Articoli;
 using FourSolid.Cqrs.Anagrafiche.Messages.Commands;
 using FourSolid.Cqrs.Anagrafiche.Messages.Events;
 using FourSolid.Shared.InfoModel;
 using FourSolid.Shared.ValueObjects;
+using Muflone.CommonDomain.Persistence;
 using Paramore.Brighter;
 using Xunit;
 
 namespace FourSolid.Cqrs.Anagrafiche.Domain.Test.Concretes.Articoli
 {
-    public class CreateArticoloTest : EventSpecification<CreateArticolo>
+    public class ModificaDescrizioneArticoloTest : EventSpecification<ModificaDescrizioneArticolo>
     {
         private readonly ArticoloId _articoloId = new ArticoloId(Guid.NewGuid().ToString("N"));
         private readonly ArticoloDescrizione _articoloDescrizione = new ArticoloDescrizione("Descrizione");
@@ -25,7 +25,7 @@ namespace FourSolid.Cqrs.Anagrafiche.Domain.Test.Concretes.Articoli
 
         private readonly IContainer _container;
 
-        public CreateArticoloTest()
+        public ModificaDescrizioneArticoloTest()
         {
             var builder = AutofacBootstrapper.BuilderContainer();
             this._container = builder.Build();
@@ -40,25 +40,25 @@ namespace FourSolid.Cqrs.Anagrafiche.Domain.Test.Concretes.Articoli
 
         protected override IEnumerable<Event> Given()
         {
-            yield break;
-        }
-
-        protected override CreateArticolo When()
-        {
-            return new CreateArticolo(this._articoloId, this._articoloDescrizione, this._unitaMisura,
+            yield return new ArticoloCreated(this._articoloId, this._articoloDescrizione, this._unitaMisura,
                 this._scortaMinima, this._who, this._when);
         }
 
-        protected override RequestHandlerAsync<CreateArticolo> OnHandler()
+        protected override ModificaDescrizioneArticolo When()
         {
-            var createArticoloCommandHandler = this._container.Resolve<CreateArticoloCommandHandler>();
-            return createArticoloCommandHandler;
+            return new ModificaDescrizioneArticolo(this._articoloId, this._articoloDescrizione, this._who, this._when);
+        }
+
+        protected override RequestHandlerAsync<ModificaDescrizioneArticolo> OnHandler()
+        {
+            var modificaDescrizioneHandler = this._container.Resolve<ModificaDescrizioneArticoloCommandHandler>();
+            return modificaDescrizioneHandler;
         }
 
         protected override IEnumerable<Event> Expect()
         {
-            yield return new ArticoloCreated(this._articoloId, this._articoloDescrizione, this._unitaMisura,
-                this._scortaMinima, this._who, this._when);
+            yield return new DescrizioneArticoloModificata(this._articoloId, this._articoloDescrizione, this._who,
+                this._when);
         }
     }
 }

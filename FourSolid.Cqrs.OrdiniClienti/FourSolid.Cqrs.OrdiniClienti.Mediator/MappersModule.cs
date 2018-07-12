@@ -19,6 +19,8 @@ namespace FourSolid.Cqrs.OrdiniClienti.Mediator
             #region Articolo
             builder.RegisterType<ArticoloCreatedMapper>().As<IAmAMessageMapper<ArticoloCreated>>().AsSelf()
                 .InstancePerLifetimeScope();
+            builder.RegisterType<DescrizioneArticoloModificataMapper>()
+                .As<IAmAMessageMapper<DescrizioneArticoloModificata>>().AsSelf().InstancePerLifetimeScope();
             #endregion
 
             #region Cliente

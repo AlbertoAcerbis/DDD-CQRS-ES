@@ -12,6 +12,8 @@ namespace FourSolid.Cqrs.Anagrafiche.Mediator
         {
             builder.RegisterType<ArticoloCreatedMapper>().As<IAmAMessageMapper<ArticoloCreated>>().AsSelf()
                 .InstancePerLifetimeScope();
+            builder.RegisterType<DescrizioneArticoloModificataMapper>().As<IAmAMessageMapper<DescrizioneArticoloModificata>>().AsSelf()
+                .InstancePerLifetimeScope();
 
             builder.RegisterType<ClienteCreatedMapper>().As<IAmAMessageMapper<ClienteCreated>>().AsSelf()
                 .InstancePerLifetimeScope();

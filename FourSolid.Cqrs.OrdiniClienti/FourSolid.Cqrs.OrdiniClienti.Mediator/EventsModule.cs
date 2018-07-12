@@ -19,6 +19,8 @@ namespace FourSolid.Cqrs.OrdiniClienti.Mediator
             #region Articolo
             builder.RegisterType<ArticoloCreatedEventHandler>().As<IHandleRequests<ArticoloCreated>>().AsSelf()
                 .InstancePerLifetimeScope();
+            builder.RegisterType<DescrizioneArticoloModificataEventHandler>()
+                .As<IHandleRequests<DescrizioneArticoloModificata>>().AsSelf().InstancePerLifetimeScope();
             #endregion
 
             #region Cliente

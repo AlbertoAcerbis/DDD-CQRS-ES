@@ -31,5 +31,18 @@ namespace FourSolid.Cqrs.Anagrafiche.Domain.Entities
             this._scortaMinima = @event.ScortaMinima;
         }
         #endregion
+
+        internal void ModificaDescrizioneArticolo(ArticoloId articoloId, ArticoloDescrizione descrizione,
+            AccountInfo who, When when)
+        {
+            DomainRules.ChkArticoloDescrizione(descrizione);
+
+            this.RaiseEvent(new DescrizioneArticoloModificata(articoloId, descrizione, who, when));
+        }
+
+        private void Apply(DescrizioneArticoloModificata @event)
+        {
+            this._articoloDescrizione = @event.ArticoloDescrizione;
+        }
     }
 }

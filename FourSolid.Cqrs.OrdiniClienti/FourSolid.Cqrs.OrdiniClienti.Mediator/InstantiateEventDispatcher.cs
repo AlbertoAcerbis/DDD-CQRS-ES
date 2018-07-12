@@ -34,6 +34,7 @@ namespace FourSolid.Cqrs.OrdiniClienti.Mediator
             subscriberRegistry.Register<OrdineClienteCreated, OrdineClienteCreatedEventHandler>();
 
             subscriberRegistry.Register<ArticoloCreated, ArticoloCreatedEventHandler>();
+            subscriberRegistry.Register<DescrizioneArticoloModificata, DescrizioneArticoloModificataEventHandler>();
 
             subscriberRegistry.Register<ClienteCreated, ClienteCreatedEventHandler>();
 
@@ -42,6 +43,7 @@ namespace FourSolid.Cqrs.OrdiniClienti.Mediator
                 { typeof(OrdineClienteCreated), typeof(OrdineClienteCreatedMapper) },
 
                 { typeof(ArticoloCreated), typeof(ArticoloCreatedMapper) },
+                { typeof(DescrizioneArticoloModificata), typeof(DescrizioneArticoloModificataMapper) },
 
                 { typeof(ClienteCreated), typeof(ClienteCreatedMapper) },
             };
@@ -75,6 +77,10 @@ namespace FourSolid.Cqrs.OrdiniClienti.Mediator
                     new Connection<ArticoloCreated>(new ConnectionName("ArticoloCreatedEvent"),
                         new ChannelName("ArticoloForOrdiniClientiCreated"),
                         new RoutingKey("ArticoloCreated"),
+                        timeoutInMilliseconds: 200),
+                    new Connection<DescrizioneArticoloModificata>(new ConnectionName("DescrizioneArticoloModificataEvent"),
+                        new ChannelName("DescrizioneArticoloForOrdiniClientiModificata"),
+                        new RoutingKey("DescrizioneArticoloModificata"),
                         timeoutInMilliseconds: 200),
 
                     new Connection<ClienteCreated>(new ConnectionName("ClienteCreatedEvent"),

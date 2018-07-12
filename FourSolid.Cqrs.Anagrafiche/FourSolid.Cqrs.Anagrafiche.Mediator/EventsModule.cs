@@ -12,6 +12,8 @@ namespace FourSolid.Cqrs.Anagrafiche.Mediator
         {
             builder.RegisterType<ArticoloCreatedEventHandler>().As<IHandleRequests<ArticoloCreated>>().AsSelf()
                 .InstancePerLifetimeScope();
+            builder.RegisterType<DescrizioneArticoloModificataEventHandler>()
+                .As<IHandleRequests<DescrizioneArticoloModificata>>().AsSelf().InstancePerLifetimeScope();
 
             builder.RegisterType<ClienteCreatedEventHandler>().As<IHandleRequests<ClienteCreated>>().AsSelf()
                 .InstancePerLifetimeScope();
