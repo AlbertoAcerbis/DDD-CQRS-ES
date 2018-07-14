@@ -43,8 +43,7 @@ namespace FourSolid.Cqrs.Anagrafiche.Controllers
         {
             try
             {
-                var commandInfo = this.DecodeJwtToken();
-                await this._articoloOrchestrator.CreateArticoloAsync(articoloToCreate, commandInfo.Who, commandInfo.When);
+                await this._articoloOrchestrator.CreateArticoloAsync(articoloToCreate, this.CommandInfo.Who, this.CommandInfo.When);
 
                 return this.Created("articoli", new PostResult("/", ""));
             }
@@ -104,9 +103,8 @@ namespace FourSolid.Cqrs.Anagrafiche.Controllers
         {
             try
             {
-                var commandInfo = this.DecodeJwtToken();
-                await this._articoloOrchestrator.ModificaDescrizioneArticoloAsync(articolo, commandInfo.Who,
-                    commandInfo.When);
+                await this._articoloOrchestrator.ModificaDescrizioneArticoloAsync(articolo, this.CommandInfo.Who,
+                    this.CommandInfo.When);
 
                 return this.NoContent();
             }
@@ -114,7 +112,6 @@ namespace FourSolid.Cqrs.Anagrafiche.Controllers
             {
                 this._logger.LogError($"[ArticoliController.GetArticoloDetailsById] - {CommonServices.GetErrorMessage(ex)}");
                 throw new Exception($"[ArticoliController.GetArticoloDetailsById] - {CommonServices.GetErrorMessage(ex)}");
-                throw;
             }
         }
     }

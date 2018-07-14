@@ -11,7 +11,7 @@ namespace FourSolid.Cqrs.Anagrafiche.ApplicationServices.Handlers.Articoli
 
         public DescrizioneArticoloModificataEventHandler(IArticoloFactory articoloFactory)
         {
-            _articoloFactory = articoloFactory;
+            this._articoloFactory = articoloFactory;
         }
 
         public override DescrizioneArticoloModificata Handle(DescrizioneArticoloModificata command)

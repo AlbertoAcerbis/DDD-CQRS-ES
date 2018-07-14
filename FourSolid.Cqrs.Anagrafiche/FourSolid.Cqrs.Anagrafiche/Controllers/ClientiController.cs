@@ -44,8 +44,7 @@ namespace FourSolid.Cqrs.Anagrafiche.Controllers
         {
             try
             {
-                var commandInfo = this.DecodeJwtToken();
-                await this._clienteOrchestrator.CreateClienteAsync(cliente, commandInfo.Who, commandInfo.When);
+                await this._clienteOrchestrator.CreateClienteAsync(cliente, this.CommandInfo.Who, this.CommandInfo.When);
 
                 var clienteUri = $"{GetUri(this.Request)}";
                 return this.Created("clienti", new PostResult(clienteUri, ""));
