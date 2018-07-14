@@ -10,6 +10,7 @@ namespace FourSolid.Cqrs.Anagrafiche.Shared.ApplicationServices
         Task CreateArticoloAsync(ArticoloId articoloId, ArticoloDescrizione articoloDescrizione,
             UnitaMisura unitaMisura, ScortaMinima scortaMinima);
 
+        Task ModificaDescrizioneArticoloAsync(ArticoloId articoloId, ArticoloDescrizione descrizione);
         Task<IEnumerable<ArticoloJson>> GetArticoliAsync();
         Task<ArticoloJson> GetArticoloByIdAsync(ArticoloId articoloId);
     }

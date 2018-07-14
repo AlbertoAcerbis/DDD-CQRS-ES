@@ -43,8 +43,7 @@ namespace FourSolid.Cqrs.Anagrafiche.Controllers
         {
             try
             {
-                var commandInfo = this.DecodeJwtToken();
-                await this._articoloOrchestrator.CreateArticoloAsync(articoloToCreate, commandInfo.Who, commandInfo.When);
+                await this._articoloOrchestrator.CreateArticoloAsync(articoloToCreate, this.CommandInfo.Who, this.CommandInfo.When);
 
                 return this.Created("articoli", new PostResult("/", ""));
             }
@@ -85,6 +84,29 @@ namespace FourSolid.Cqrs.Anagrafiche.Controllers
             try
             {
                 return await this._articoloOrchestrator.GetArticoloByIdAsync(articoloId);
+            }
+            catch (Exception ex)
+            {
+                this._logger.LogError($"[ArticoliController.GetArticoloDetailsById] - {CommonServices.GetErrorMessage(ex)}");
+                throw new Exception($"[ArticoliController.GetArticoloDetailsById] - {CommonServices.GetErrorMessage(ex)}");
+            }
+        }
+
+        /// <summary>
+        /// Modifiy Description by ArticoloId
+        /// </summary>
+        /// <param name="articolo"></param>
+        /// <returns></returns>
+        [HttpPut]
+        [Route("{articoloId}")]
+        public async Task<IActionResult> ModificaDescrizione([FromBody] ArticoloJson articolo)
+        {
+            try
+            {
+                await this._articoloOrchestrator.ModificaDescrizioneArticoloAsync(articolo, this.CommandInfo.Who,
+                    this.CommandInfo.When);
+
+                return this.NoContent();
             }
             catch (Exception ex)
             {

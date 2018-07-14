@@ -9,7 +9,7 @@ namespace FourSolid.Cqrs.Anagrafiche.Shared.ApplicationServices
     public interface IArticoloOrchestrator
     {
         Task CreateArticoloAsync(ArticoloJson articoloToCreate, AccountInfo who, When when);
-
+        Task ModificaDescrizioneArticoloAsync(ArticoloJson articolo, AccountInfo who, When when);
         Task<IEnumerable<ArticoloJson>> GetArticoliAsync();
         Task<ArticoloJson> GetArticoloByIdAsync(string articoloId);
     }

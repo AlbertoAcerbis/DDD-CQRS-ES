@@ -5,7 +5,7 @@ using FourSolid.Shared.ValueObjects;
 
 namespace FourSolid.Cqrs.Anagrafiche.Domain.Factory
 {
-    public class ArticoloFactory
+    internal class ArticoloFactory
     {
         internal static Articolo CreateArticolo(ArticoloId articoloId, ArticoloDescrizione articoloDescrizione, UnitaMisura unitaMisura,
             ScortaMinima scortaMinima, AccountInfo who, When when)

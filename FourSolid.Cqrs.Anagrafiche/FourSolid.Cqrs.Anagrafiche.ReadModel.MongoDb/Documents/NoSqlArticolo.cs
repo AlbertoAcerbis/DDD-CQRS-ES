@@ -1,6 +1,7 @@
 ﻿using FourSolid.Cqrs.Anagrafiche.ReadModel.MongoDb.Abstracts;
 using FourSolid.Cqrs.Anagrafiche.Shared.JsonModel;
 using FourSolid.Shared.ValueObjects;
+using MongoDB.Driver;
 
 namespace FourSolid.Cqrs.Anagrafiche.ReadModel.MongoDb.Documents
 {
@@ -31,6 +32,11 @@ namespace FourSolid.Cqrs.Anagrafiche.ReadModel.MongoDb.Documents
             this.ScortaMinima = scortaMinima.GetValue();
         }
         #endregion
+
+        public UpdateDefinition<NoSqlArticolo> UpdateDescrizione(ArticoloDescrizione descrizione)
+        {
+            return Builders<NoSqlArticolo>.Update.Set(a => a.ArticoloDescrizione, descrizione.GetValue());
+        }
 
         #region ToJson()
         public ArticoloJson ToJson()

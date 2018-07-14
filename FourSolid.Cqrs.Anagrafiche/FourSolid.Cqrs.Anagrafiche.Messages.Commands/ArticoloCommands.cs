@@ -22,4 +22,19 @@ namespace FourSolid.Cqrs.Anagrafiche.Messages.Commands
             this.ScortaMinima = scortaMinima;
         }
     }
+
+    public sealed class ModificaDescrizioneArticolo : CommandBase
+    {
+        public readonly ArticoloId ArticoloId;
+        public readonly ArticoloDescrizione ArticoloDescrizione;
+
+        public ModificaDescrizioneArticolo(ArticoloId articoloId, ArticoloDescrizione articoloDescrizione,
+            AccountInfo who, When when) : base(who, when)
+        {
+            this.SetAggregateIdFromDomainId(articoloId);
+
+            this.ArticoloId = articoloId;
+            this.ArticoloDescrizione = articoloDescrizione;
+        }
+    }
 }

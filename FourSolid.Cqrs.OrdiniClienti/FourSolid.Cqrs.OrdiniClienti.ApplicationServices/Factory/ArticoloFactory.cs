@@ -41,5 +41,26 @@ namespace FourSolid.Cqrs.OrdiniClienti.ApplicationServices.Factory
                 throw new Exception($"[ArticoloFactory.CreateArticoloAsync] - {CommonServices.GetErrorMessage(ex)}");
             }
         }
+
+        public async Task ModificaDescrizioneArticoloAsync(ArticoloId articoloId, ArticoloDescrizione descrizione)
+        {
+            try
+            {
+                var filter = Builders<NoSqlArticolo>.Filter.Eq("_id", articoloId.GetValue());
+                var documentResults = await this._documentUnitOfWork.NoSqlArticoloRepository.FindAsync(filter);
+
+                if (!documentResults.Any())
+                    throw new Exception($"Articolo {articoloId.GetValue()} Non Trovato!");
+
+                var noSqlDocument = documentResults.First();
+                var update = noSqlDocument.UpdateDescrizione(descrizione);
+                await this._documentUnitOfWork.NoSqlArticoloRepository.UpdateOneAsync(filter, update);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                throw;
+            }
+        }
     }
 }

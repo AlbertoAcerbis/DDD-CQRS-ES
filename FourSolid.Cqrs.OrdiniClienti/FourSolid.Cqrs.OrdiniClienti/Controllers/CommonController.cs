@@ -24,6 +24,19 @@ namespace FourSolid.Cqrs.OrdiniClienti.Controllers
         /// <summary>
         /// 
         /// </summary>
+        protected CommandInfo CommandInfo;
+
+        /// <summary>
+        /// Read Token Information
+        /// </summary>
+        protected CommonController()
+        {
+            this.CommandInfo = this.DecodeJwtToken();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         /// <returns></returns>
         protected virtual CommandInfo DecodeJwtToken()
         {

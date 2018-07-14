@@ -30,12 +30,14 @@ namespace FourSolid.Cqrs.Anagrafiche.Mediator
 
             var subscriberRegistry = new SubscriberRegistry();
             subscriberRegistry.Register<ArticoloCreated, ArticoloCreatedEventHandler>();
+            subscriberRegistry.Register<DescrizioneArticoloModificata, DescrizioneArticoloModificataEventHandler>();
 
             subscriberRegistry.Register<ClienteCreated, ClienteCreatedEventHandler>();
 
             var messageMapperRegistry = new MessageMapperRegistry(messageMapperFactory)
             {
                 { typeof(ArticoloCreated), typeof(ArticoloCreatedMapper) },
+                { typeof(DescrizioneArticoloModificata), typeof(DescrizioneArticoloModificataMapper) },
 
                 { typeof(ClienteCreated), typeof(ClienteCreatedMapper) },
             };
@@ -64,6 +66,10 @@ namespace FourSolid.Cqrs.Anagrafiche.Mediator
                     new Connection<ArticoloCreated>(new ConnectionName("ArticoloCreatedEvent"),
                         new ChannelName("ArticoloCreated"),
                         new RoutingKey("ArticoloCreated"),
+                        timeoutInMilliseconds: 200),
+                    new Connection<DescrizioneArticoloModificata>(new ConnectionName("DescrizioneArticoloModificataEvent"),
+                        new ChannelName("DescrizioneArticoloModificata"),
+                        new RoutingKey("DescrizioneArticoloModificata"),
                         timeoutInMilliseconds: 200),
 
                     new Connection<ClienteCreated>(new ConnectionName("ClienteCreatedEvent"),
